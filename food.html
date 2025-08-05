@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahir Khan Restaurant | Food </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-shopping-cart"></i> Complete Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="customerName">Your Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number:</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerAddress">Delivery Address:</label>
+                    <textarea id="customerAddress" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Order Summary:</label>
+                    <div id="orderSummary"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Tahir Khan <span>Restaurant</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="active">Food Menu</a></li>
+                    <li><a href="essentials.html">Essentials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="food" class="tab-content active">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-pepper-hot"></i> Food Menu</h2>
+                <div class="menu-grid">
+                    <!-- Samosa -->
+                    <div class="menu-item">
+                        <div class="item-img">
+                            <img src="images/Food/Samosa.jpg" alt="Samosa">
+                            <span class="price">30Pkr</span>
+                        </div>
+                        <div class="item-details">
+                            <h3>Samosa</h3>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-item="Samosa" data-price="30">
+                                <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="btn btn-order" onclick="addToOrder('Samosa', 30)">
+                                <i class="fas fa-cart-plus"></i> Add to Order
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Roll -->
+                    <div class="menu-item">
+                        <div class="item-img">
+                            <img src="images/Food/Roll.jpg" alt="Roll">
+                            <span class="price">30Pkr</span>
+                        </div>
+                        <div class="item-details">
+                            <h3>Roll</h3>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-item="Roll" data-price="30">
+                                <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                            </div>
+                            <button class="btn btn-order" onclick="addToOrder('Roll', 30)">
+                                <i class="fas fa-cart-plus"></i> Add to Order
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more food items here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Order Cart Button -->
+    <div id="orderCart" class="order-cart">
+        <button onclick="showOrderModal()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount">0</span> items
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with Love, by Shahkaar Gul</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
