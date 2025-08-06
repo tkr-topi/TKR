@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tahir Khan Restaurant | Food </title>
+    <title>Tahir Khan Restaurant | Food</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="food.css">
 </head>
 <body>
     <!-- Order Modal -->
@@ -47,7 +49,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#" class="active">Food Menu</a></li>
+                    <li><a href="food.html" class="active">Food</a></li>
                     <li><a href="essentials.html">Essentials</a></li>
                 </ul>
             </nav>
@@ -58,47 +60,178 @@
     <main>
         <section id="food" class="tab-content active">
             <div class="container">
-                <h2 class="section-title"><i class="fas fa-pepper-hot"></i> Food Menu</h2>
-                <div class="menu-grid">
-                    <!-- Samosa -->
-                    <div class="menu-item">
-                        <div class="item-img">
-                            <img src="images/Food/Samosa.jpg" alt="Samosa">
-                            <span class="price">30Pkr</span>
-                        </div>
-                        <div class="item-details">
-                            <h3>Samosa</h3>
-                            <div class="quantity-selector">
-                                <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
-                                <input type="number" class="quantity-input" value="1" min="1" data-item="Samosa" data-price="30">
-                                <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                
+                
+                <!-- Food Categories -->
+                <div class="food-categories">
+                    <div class="food-category-tab active" data-category="snacks">
+                        <i class="fas fa-utensils"></i> Snacks
+                    </div>
+                    <div class="food-category-tab" data-category="biryani">
+                        <i class="fas fa-drumstick-bite"></i> Biryani
+                    </div>
+                    <div class="food-category-tab" data-category="chaat">
+                        <i class="fas fa-mortar-pestle"></i> Chaat
+                    </div>
+                    <div class="food-category-tab" data-category="drinks">
+                        <i class="fas fa-glass-whiskey"></i> Drinks
+                    </div>
+                </div>
+                
+                <!-- Food Items Grid -->
+                <div class="food-grid">
+                    <!-- Snacks Category -->
+                    <div class="food-category-content active" data-category="snacks">
+                        <!-- Samosa -->
+                        <div class="food-item">
+                            <div class="food-img">
+                                <img src="images/Food/Samosa.jpg" alt="Samosa">
+                                <span class="price">30Pkr</span>
                             </div>
-                            <button class="btn btn-order" onclick="addToOrder('Samosa', 30)">
-                                <i class="fas fa-cart-plus"></i> Add to Order
-                            </button>
+                            <div class="food-details">
+                                <h3>Samosa</h3>
+                                <p class="food-description">Crispy pastry filled with spiced potatoes and peas</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-item="Samosa" data-price="30">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                                </div>
+                                <button class="btn btn-order" onclick="addToOrder('Samosa', 30)">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Roll -->
+                        <div class="food-item">
+                            <div class="food-img">
+                                <img src="images/Food/Roll.jpg" alt="Roll">
+                                <span class="price">30Pkr</span>
+                            </div>
+                            <div class="food-details">
+                                <h3>Chicken Roll</h3>
+                                <p class="food-description">Soft paratha wrapped with chicken and sauces</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-item="Chicken Roll" data-price="30">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                                </div>
+                                <button class="btn btn-order" onclick="addToOrder('Chicken Roll', 30)">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Pakora -->
+                        <div class="food-item">
+                            <div class="food-img">
+                                <img src="images/Food/Pakora.jpg" alt="Pakora">
+                                <span class="price">50Pkr</span>
+                            </div>
+                            <div class="food-details">
+                                <h3>Pakora</h3>
+                                <p class="food-description">Deep-fried vegetable fritters with spices</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-item="Pakora" data-price="25">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                                </div>
+                                <button class="btn btn-order" onclick="addToOrder('Pakora', 50)">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Roll -->
-                    <div class="menu-item">
-                        <div class="item-img">
-                            <img src="images/Food/Roll.jpg" alt="Roll">
-                            <span class="price">30Pkr</span>
-                        </div>
-                        <div class="item-details">
-                            <h3>Roll</h3>
-                            <div class="quantity-selector">
-                                <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
-                                <input type="number" class="quantity-input" value="1" min="1" data-item="Roll" data-price="30">
-                                <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                    <!-- Biryani Category -->
+                    <div class="food-category-content" data-category="biryani">
+                        <!-- Chicken Biryani -->
+                        <div class="food-item">
+                            <div class="food-img">
+                                <img src="images/Food/Biryani.jpg" alt="Chicken Biryani">
+                                <span class="price">200Pkr</span>
                             </div>
-                            <button class="btn btn-order" onclick="addToOrder('Roll', 30)">
-                                <i class="fas fa-cart-plus"></i> Add to Order
-                            </button>
+                            <div class="food-details">
+                                <h3>Chicken Biryani</h3>
+                                <p class="food-description">Fragrant rice with tender chicken pieces</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-item="Chicken Biryani" data-price="150">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                                </div>
+                                <button class="btn btn-order" onclick="addToOrder('Chicken Biryani', 200)">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Chaat Category -->
+                    <div class="food-category-content" data-category="chaat">
+                        <!-- Dahi Bhalla -->
+                        <div class="food-item">
+                            <div class="food-img">
+                                <img src="images/Food/SamosaChaat.jpeg" alt="Samosa Chaat">
+                                <span class="price">150Pkr</span>
+                            </div>
+                            <div class="food-details">
+                                <h3>Samosa Chaat</h3>
+                                <p class="food-description">Samosa Chaat</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-item="Samosa Chaat" data-price="150">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                                </div>
+                                <button class="btn btn-order" onclick="addToOrder('Samosa Chaat', 150)">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Add more food items here -->
+                    <!-- Drinks Category -->
+                    <div class="food-category-content" data-category="drinks">
+                        <!-- Lassi -->
+                        <div class="food-item">
+                            <div class="food-img">
+                                <img src="images/Food/Lassi.jpeg" alt="Lassi">
+                                <span class="price">100Pkr</span>
+                            </div>
+                            <div class="food-details">
+                                <h3>Sweet Lassi</h3>
+                                <p class="food-description">Traditional yogurt-based sweet drink</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-item="Sweet Lassi" data-price="40">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                                </div>
+                                <button class="btn btn-order" onclick="addToOrder('Sweet Lassi', 100)">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="food-item">
+                            <div class="food-img">
+                                <img src="images/Food/Pepsi Regular.png" alt="Lassi">
+                                <span class="price">160Pkr</span>
+                            </div>
+                            <div class="food-details">
+                                <h3>Pepsi</h3>
+                                <p class="food-description">1-Litre</p>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" data-item="Pepsi" data-price="160">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
+                                </div>
+                                <button class="btn btn-order" onclick="addToOrder('Pepsi', 160)">
+                                    <i class="fas fa-cart-plus"></i> Add to Order
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -119,6 +252,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
+    <script src="food.js"></script>
 </body>
 </html>
