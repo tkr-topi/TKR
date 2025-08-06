@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Category switching functionality - Fixed version
+    // Category switching functionality
     const subcategoryTabs = document.querySelectorAll('.subcategory-tab');
     subcategoryTabs.forEach(tab => {
         tab.addEventListener('click', function() {
@@ -181,11 +181,12 @@ function showOrderModal() {
     
     // Build order summary
     let summaryHTML = '';
-    let total = 0;
+    let subtotal = 0;
+    const deliveryCharges = 30; // 30 Rs delivery charges
     
     currentOrder.forEach(item => {
         const itemTotal = item.price * item.quantity;
-        total += itemTotal;
+        subtotal += itemTotal;
         
         summaryHTML += `
             <div class="order-item">
@@ -194,6 +195,17 @@ function showOrderModal() {
             </div>
         `;
     });
+    
+    // Add delivery charges
+    summaryHTML += `
+        <div class="order-item">
+            <span>Delivery Charges</span>
+            <span>${deliveryCharges.toFixed(2)}Pkr</span>
+        </div>
+    `;
+    
+    // Calculate total including delivery charges
+    const total = subtotal + deliveryCharges;
     
     summaryHTML += `
         <div class="order-total">
@@ -223,12 +235,20 @@ function sendOrderViaWhatsApp() {
     message += `*Delivery Address:*%0A${address}%0A%0A`;
     message += `*Order Details:*%0A`;
     
-    let total = 0;
+    let subtotal = 0;
+    const deliveryCharges = 30; // 30 Rs delivery charges
+    
     currentOrder.forEach(item => {
         const itemTotal = item.price * item.quantity;
-        total += itemTotal;
+        subtotal += itemTotal;
         message += `- ${item.name} x ${item.quantity} = ${itemTotal.toFixed(2)}Pkr%0A`;
     });
+    
+    // Add delivery charges to message
+    message += `- Delivery Charges = ${deliveryCharges.toFixed(2)}Pkr%0A`;
+    
+    // Calculate total including delivery charges
+    const total = subtotal + deliveryCharges;
     
     message += `%0A*TOTAL: ${total.toFixed(2)}Pkr*%0A%0A`;
     message += `Please confirm this order.`;
