@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tahir Khan Restaurant | Essentials</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="essentials.css">
 </head>
 <body>
     <!-- Age Verification Modal -->
@@ -59,7 +61,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="food.html">Food Menu</a></li>
+                    <li><a href="food.html">Food</a></li>
                     <li><a href="essentials.html" class="active">Essentials</a></li>
                 </ul>
             </nav>
@@ -77,50 +79,117 @@
                     <button class="btn btn-primary" id="verifyAgeBtn">Verify Age</button>
                 </div>
                 
-                <div id="essentialsMenu" class="menu-grid" style="display: none;">
-                    
-                    
-                    <!-- Velo Mint -->
-                    <div class="menu-item">
-                        <div class="item-img">
-                            <img src="images/Velo/3DotMint.png" alt="3-Dot Velo (Mint)">
-                            <span class="price">250Pkr</span>
-                            <span class="age-restricted">18+</span>
+                <div id="essentialsMenu" class="essentials-container" style="display: none;">
+                    <!-- Mobile Subcategory Toggle -->
+                    <button id="mobileCategoryToggle" class="mobile-category-toggle">
+                        <i class="fas fa-bars"></i> Categories
+                    </button>
+
+                    <!-- Subcategory Sidebar -->
+                    <div class="subcategory-sidebar">
+                        <div class="subcategory-tab active" data-category="velo">
+                            <i class="fas fa-cube"></i> Velo
                         </div>
-                        <div class="item-details">
-                            <h3>POLAR MINT ORIGINAL (3-Dot)</h3>
-                            <div class="quantity-selector">
-                                <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
-                                <input type="number" class="quantity-input" value="1" min="1" data-item="POLAR MINT ORIGINAL" data-price="250">
-                                <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
-                            </div>
-                            <button class="btn btn-order" onclick="addToOrder('POLAR MINT ORIGINAL', 250)">
-                                <i class="fas fa-cart-plus"></i> Add to Order
-                            </button>
+                        <div class="subcategory-tab" data-category="cigarettes">
+                            <i class="fas fa-smoking"></i> Cigarettes
                         </div>
-                    </div>
-                    
-                    <!-- Velo Elaichi -->
-                    <div class="menu-item">
-                        <div class="item-img">
-                            <img src="images/Velo/3DotElaichi.png" alt="3-Dot Velo (Elaichi)">
-                            <span class="price">250Pkr</span>
-                            <span class="age-restricted">18+</span>
+                        <div class="subcategory-tab" data-category="lighters">
+                            <i class="fas fa-fire"></i> Lighters
                         </div>
-                        <div class="item-details">
-                            <h3>RICH ELAICHI ORIGINAL (3-Dot)</h3>
-                            <div class="quantity-selector">
-                                <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
-                                <input type="number" class="quantity-input" value="1" min="1" data-item="RICH ELAICHI ORIGINAL" data-price="250">
-                                <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
-                            </div>
-                            <button class="btn btn-order" onclick="addToOrder('RICH ELAICHI ORIGINAL', 250)">
-                                <i class="fas fa-cart-plus"></i> Add to Order
-                            </button>
+                        <div class="subcategory-tab" data-category="devices">
+                            <i class="fas fa-tablet-alt"></i> Devices
+                        </div>
+                        <div class="subcategory-tab" data-category="ejuice">
+                            <i class="fas fa-tint"></i> E-Juice
+                        </div>
+                        <div class="subcategory-tab" data-category="disposable">
+                            <i class="fas fa-battery-full"></i> Disposable
+                        </div>
+                        <div class="subcategory-tab" data-category="accessories">
+                            <i class="fas fa-tools"></i> Accessories
                         </div>
                     </div>
-                    
-                    <!-- Add more essential items here following the same pattern -->
+
+                    <!-- Products Grid -->
+                    <div class="products-grid">
+                        <!-- Velo Category -->
+                        <div class="subcategory-content active" data-category="velo">
+                            <!-- Velo Mint -->
+                            <div class="essential-item">
+                                <div class="essential-img">
+                                    <img src="images/Velo/3DotMint.png" alt="3-Dot Velo (Mint)">
+                                    <span class="price">250Pkr</span>
+                                </div>
+                                <div class="essential-details">
+                                    <h3>POLAR MINT ORIGINAL (3-Dot)</h3>
+                                    <div class="essential-meta">
+                                        <span class="strength">Strength: Medium</span>
+                                        <span class="age-restricted">18+</span>
+                                    </div>
+                                    <button class="btn btn-order" onclick="addToOrder('POLAR MINT ORIGINAL (3-Dot)', 250)">
+                                        <i class="fas fa-cart-plus"></i> Add to Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Velo Elaichi -->
+                            <div class="essential-item">
+                                <div class="essential-img">
+                                    <img src="images/Velo/3DotElaichi.png" alt="3-Dot Velo (Elaichi)">
+                                    <span class="price">250Pkr</span>
+                                </div>
+                                <div class="essential-details">
+                                    <h3>RICH ELAICHI ORIGINAL (3-Dot)</h3>
+                                    <div class="essential-meta">
+                                        <span class="strength">Strength: Medium</span>
+                                        <span class="age-restricted">18+</span>
+                                    </div>
+                                    <button class="btn btn-order" onclick="addToOrder('RICH ELAICHI ORIGINAL (3-Dot)', 250)">
+                                        <i class="fas fa-cart-plus"></i> Add to Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cigarettes Category -->
+                        <div class="subcategory-content" data-category="cigarettes">
+                            <!-- Red & White -->
+                            <div class="essential-item">
+                                <div class="essential-img">
+                                    <img src="images/Cigarettes/Red&White.jpeg" alt="Red & White Cigarettes">
+                                    <span class="price">210Pkr</span>
+                                </div>
+                                <div class="essential-details">
+                                    <h3>Red & White</h3>
+                                    <div class="essential-meta">
+                                        <span class="age-restricted">18+</span>
+                                    </div>
+                                    <button class="btn btn-order" onclick="addToOrder('Red & White Cigarettes', 210)">
+                                        <i class="fas fa-cart-plus"></i> Add to Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Dunhill Switch -->
+                            <div class="essential-item">
+                                <div class="essential-img">
+                                    <img src="images/Cigarettes/DunhilSwitch.jpeg" alt="Dunhil Switch">
+                                    <span class="price">650Pkr</span>
+                                </div>
+                                <div class="essential-details">
+                                    <h3>Dunhill Switch</h3>
+                                    <div class="essential-meta">
+                                        <span class="age-restricted">18+</span>
+                                    </div>
+                                    <button class="btn btn-order" onclick="addToOrder('Dunhill Switch', 650)">
+                                        <i class="fas fa-cart-plus"></i> Add to Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other categories would go here -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -143,5 +212,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="essentials.js"></script>
 </body>
 </html>
