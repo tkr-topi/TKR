@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahir Khan Restaurant | Disposable Vapes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="essentials.css">
+  <link rel="stylesheet" href="categories.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-utensils"></i>
+        <h1>Tahir Khan <span>Restaurant</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="food.html">Food</a></li>
+          <li><a href="essentials.html" class="active">Essentials</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-page">
+      <div class="container">
+        <h2><i class="fas fa-battery-full"></i> Disposable Vapes</h2>
+
+        <div class="products-grid">
+          <div class="essential-item">
+            <div class="essential-img">
+              <img src="images/Disposable/elfBar.png" alt="Elf Bar Disposable">
+              <span class="price">2500Pkr</span>
+            </div>
+            <div class="essential-details">
+              <h3>Elf Bar 5000 Puffs</h3>
+              <button class="btn btn-order" onclick="addToOrder('Elf Bar 5000 Puffs', 2500)">
+                <i class="fas fa-cart-plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <div class="essential-item">
+            <div class="essential-img">
+              <img src="images/Disposable/puffBar.png" alt="Puff Bar">
+              <span class="price">1800Pkr</span>
+            </div>
+            <div class="essential-details">
+              <h3>Puff Bar 2000 Puffs</h3>
+              <button class="btn btn-order" onclick="addToOrder('Puff Bar 2000 Puffs', 1800)">
+                <i class="fas fa-cart-plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="orderCart" class="order-cart">
+    <button onclick="showOrderModal()">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount">0</span> items
+    </button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Made with Love, by Shahkaar Gul</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="essentials.js"></script>
+  <script src="categories.js"></script>
+</body>
+</html>

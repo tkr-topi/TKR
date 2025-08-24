@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahir Khan Restaurant | Devices</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="essentials.css">
+  <link rel="stylesheet" href="categories.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-utensils"></i>
+        <h1>Tahir Khan <span>Restaurant</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="food.html">Food</a></li>
+          <li><a href="essentials.html" class="active">Essentials</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-page">
+      <div class="container">
+        <h2><i class="fas fa-tablet-alt"></i> Devices</h2>
+
+        <div class="products-grid">
+          <div class="essential-item">
+            <div class="essential-img">
+              <img src="images/Pods/OxvaXlimPro2.png" alt="Vape Device">
+              <span class="price">7830Pkr</span>
+            </div>
+            <div class="essential-details">
+              <h3>Oxva Xlim Pro 2</h3>
+              <button class="btn btn-order" onclick="addToOrder('Oxva Xlim Pro 2', 7830)">
+                <i class="fas fa-cart-plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <div class="essential-item">
+            <div class="essential-img">
+              <img src="images/Pods/OxvaNeXlimPodKit.png" alt="Pod System">
+              <span class="price">8460Pkr</span>
+            </div>
+            <div class="essential-details">
+              <h3>Oxva Ne Xlim Pod Kit</h3>
+              <button class="btn btn-order" onclick="addToOrder('Oxva Ne Xlim Pod Kit', 8460)">
+                <i class="fas fa-cart-plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <div class="essential-item">
+            <div class="essential-img">
+              <img src="images/Pods/OxvaOneoPodKit.png" alt="Pod System">
+              <span class="price">6500Pkr</span>
+            </div>
+            <div class="essential-details">
+              <h3>Oxva Oneo Pod Kit</h3>
+              <button class="btn btn-order" onclick="addToOrder('Oxva Oneo Pod Kit', 6500)">
+                <i class="fas fa-cart-plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <div class="essential-item">
+            <div class="essential-img">
+              <img src="images/Pods/OxvaVprimePodKit.png" alt="Pod System">
+              <span class="price">8460Pkr</span>
+            </div>
+            <div class="essential-details">
+              <h3>Oxva Vprime Pod Kit</h3>
+              <button class="btn btn-order" onclick="addToOrder('Oxva Vprime Pod Kit', 8460)">
+                <i class="fas fa-cart-plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="orderCart" class="order-cart">
+    <button onclick="showOrderModal()">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount">0</span> items
+    </button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Made with Love, by Shahkaar Gul</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="essentials.js"></script>
+  <script src="categories.js"></script>
+</body>
+</html>
