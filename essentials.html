@@ -6,51 +6,9 @@
     <title>Tahir Khan Restaurant | Essentials</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="essentials.css">
 </head>
 <body>
-    <!-- Age Verification Modal -->
-    <div id="ageModal" class="modal">
-        <div class="modal-content">
-            <h2><i class="fas fa-exclamation-triangle"></i> Age Verification</h2>
-            <p>You must be 18+ to view tobacco/vape products.</p>
-            <div class="modal-buttons">
-                <button id="confirmAge" class="btn btn-primary">I'm 18+</button>
-                <button id="denyAge" class="btn btn-secondary">Cancel</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Order Modal -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2><i class="fas fa-shopping-cart"></i> Complete Your Order</h2>
-            <form id="orderForm">
-                <div class="form-group">
-                    <label for="customerName">Your Name:</label>
-                    <input type="text" id="customerName" required>
-                </div>
-                <div class="form-group">
-                    <label for="customerPhone">Phone Number:</label>
-                    <input type="tel" id="customerPhone" required>
-                </div>
-                <div class="form-group">
-                    <label for="customerAddress">Delivery Address:</label>
-                    <textarea id="customerAddress" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Order Summary:</label>
-                    <div id="orderSummary"></div>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
-                </button>
-            </form>
-        </div>
-    </div>
-
     <!-- Header -->
     <header>
         <div class="container">
@@ -75,139 +33,55 @@
                 <div id="ageGateMessage" class="age-gate-message">
                     <i class="fas fa-lock"></i>
                     <h3>Age Verification Required</h3>
-                    <p>Please confirm you're 18+ to view these products</p>
+                    <p>Please confirm you're 18+ to view our products</p>
                     <button class="btn btn-primary" id="verifyAgeBtn">Verify Age</button>
                 </div>
                 
                 <div id="essentialsMenu" class="essentials-container" style="display: none;">
-                    <!-- Mobile Subcategory Toggle -->
-                    <button id="mobileCategoryToggle" class="mobile-category-toggle">
-                        <i class="fas fa-bars"></i> Categories
-                    </button>
-
-                    <!-- Subcategory Sidebar -->
-                    <div class="subcategory-sidebar">
-                        <div class="subcategory-tab active" data-category="velo">
-                            <i class="fas fa-cube"></i> Velo
-                        </div>
-                        <div class="subcategory-tab" data-category="cigarettes">
-                            <i class="fas fa-smoking"></i> Cigarettes
-                        </div>
-                        <div class="subcategory-tab" data-category="lighters">
-                            <i class="fas fa-fire"></i> Lighters
-                        </div>
-                        <div class="subcategory-tab" data-category="devices">
-                            <i class="fas fa-tablet-alt"></i> Devices
-                        </div>
-                        <div class="subcategory-tab" data-category="ejuice">
-                            <i class="fas fa-tint"></i> E-Juice
-                        </div>
-                        <div class="subcategory-tab" data-category="disposable">
-                            <i class="fas fa-battery-full"></i> Disposable
-                        </div>
-                        <div class="subcategory-tab" data-category="accessories">
-                            <i class="fas fa-tools"></i> Accessories
-                        </div>
+                    <div class="age-warning">
+                        <i class="fas fa-exclamation-circle"></i> You must be 18 years or older to purchase any products on this site.
                     </div>
-
-                    <!-- Products Grid -->
-                    <div class="products-grid">
-                        <!-- Velo Category -->
-                        <div class="subcategory-content active" data-category="velo">
-                            <!-- Velo Mint -->
-                            <div class="essential-item">
-                                <div class="essential-img">
-                                    <img src="images/Velo/3DotMint.png" alt="3-Dot Velo (Mint)">
-                                    <span class="price">250Pkr</span>
-                                </div>
-                                <div class="essential-details">
-                                    <h3>POLAR MINT ORIGINAL (3-Dot)</h3>
-                                    <div class="essential-meta">
-                                        <span class="strength">Strength: Medium</span>
-                                        <span class="age-restricted">18+</span>
-                                    </div>
-                                    <button class="btn btn-order" onclick="addToOrder('POLAR MINT ORIGINAL (3-Dot)', 250)">
-                                        <i class="fas fa-cart-plus"></i> Add to Order
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <!-- Velo Elaichi -->
-                            <div class="essential-item">
-                                <div class="essential-img">
-                                    <img src="images/Velo/3DotElaichi.png" alt="3-Dot Velo (Elaichi)">
-                                    <span class="price">250Pkr</span>
-                                </div>
-                                <div class="essential-details">
-                                    <h3>RICH ELAICHI ORIGINAL (3-Dot)</h3>
-                                    <div class="essential-meta">
-                                        <span class="strength">Strength: Medium</span>
-                                        <span class="age-restricted">18+</span>
-                                    </div>
-                                    <button class="btn btn-order" onclick="addToOrder('RICH ELAICHI ORIGINAL (3-Dot)', 250)">
-                                        <i class="fas fa-cart-plus"></i> Add to Order
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Cigarettes Category -->
-                        <div class="subcategory-content" data-category="cigarettes">
-                            <!-- Red & White -->
-                            <div class="essential-item">
-                                <div class="essential-img">
-                                    <img src="images/Cigarettes/Red&White.jpeg" alt="Red & White Cigarettes">
-                                    <span class="price">210Pkr</span>
-                                </div>
-                                <div class="essential-details">
-                                    <h3>Red & White</h3>
-                                    <div class="essential-meta">
-                                        <span class="age-restricted">18+</span>
-                                    </div>
-                                    <button class="btn btn-order" onclick="addToOrder('Red & White Cigarettes', 210)">
-                                        <i class="fas fa-cart-plus"></i> Add to Order
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <!-- Dunhill Switch -->
-                            <div class="essential-item">
-                                <div class="essential-img">
-                                    <img src="images/Cigarettes/DunhilSwitch.jpeg" alt="Dunhil Switch">
-                                    <span class="price">650Pkr</span>
-                                </div>
-                                <div class="essential-details">
-                                    <h3>Dunhill Switch</h3>
-                                    <div class="essential-meta">
-                                        <span class="age-restricted">18+</span>
-                                    </div>
-                                    <button class="btn btn-order" onclick="addToOrder('Dunhill Switch', 650)">
-                                        <i class="fas fa-cart-plus"></i> Add to Order
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Other categories would go here -->
+                    
+                    <!-- Category Tiles -->
+                    <div class="category-grid">
+                        <a href="velo.html" class="category-tile">
+                            <i class="fas fa-cube"></i>
+                            <h2>Velo</h2>
+                        </a>
+                        <a href="cigarettes.html" class="category-tile">
+                            <i class="fas fa-smoking"></i>
+                            <h2>Cigarettes</h2>
+                        </a>
+                        <a href="lighters.html" class="category-tile">
+                            <i class="fas fa-fire"></i>
+                            <h2>Lighters</h2>
+                        </a>
+                        <a href="devices.html" class="category-tile">
+                            <i class="fas fa-tablet-alt"></i>
+                            <h2>Devices</h2>
+                        </a>
+                        <a href="ejuice.html" class="category-tile">
+                            <i class="fas fa-tint"></i>
+                            <h2>E-Juice</h2>
+                        </a>
+                        <a href="disposable.html" class="category-tile">
+                            <i class="fas fa-battery-full"></i>
+                            <h2>Disposable</h2>
+                        </a>
+                        <a href="accessories.html" class="category-tile">
+                            <i class="fas fa-tools"></i>
+                            <h2>Accessories</h2>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Order Cart Button -->
-    <div id="orderCart" class="order-cart">
-        <button onclick="showOrderModal()">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cartCount">0</span> items
-        </button>
-    </div>
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>Made with Love, by Shahkaar Gul</p>
-            <p class="disclaimer"><i class="fas fa-exclamation-circle"></i> Tobacco products are injurious to health. 18+ only.</p>
         </div>
     </footer>
 
