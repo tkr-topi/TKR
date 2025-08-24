@@ -62,3 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuItems.forEach(item => observer.observe(item));
 });
+
+// Add this JavaScript to toggle the mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
+});
