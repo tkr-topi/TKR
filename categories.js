@@ -200,3 +200,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generate a random order number between 1000-9999
     orderCounter = Math.floor(Math.random() * 9000) + 1000;
 });
+
+// Add this JavaScript to toggle the mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
+});
