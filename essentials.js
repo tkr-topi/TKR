@@ -254,7 +254,7 @@ function sendOrderViaWhatsApp() {
     message += `Please confirm this order.`;
     
     // Open WhatsApp
-    const whatsappNumber = '923005159901';
+    const whatsappNumber = '+923416040120';
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
     
     // Reset order
@@ -294,7 +294,7 @@ function sendOrderViaWhatsApp() {
             // or similar navigation method
         }
 
-// Add this JavaScript to toggle the mobile menu
+        // Add this JavaScript to toggle the mobile menu
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
@@ -305,4 +305,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
