@@ -293,3 +293,16 @@ function sendOrderViaWhatsApp() {
             // window.location.href = `${category}.html`;
             // or similar navigation method
         }
+
+// Add this JavaScript to toggle the mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+    }
+});
+
