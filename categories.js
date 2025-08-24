@@ -110,7 +110,7 @@ function closeOrderModal() {
 
 // Confirm order and send via WhatsApp
 function confirmOrder() {
-    const phone = "+923005159901";
+    const phone = "+923416040120";
     const message = generateWhatsAppMessage();
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     
