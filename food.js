@@ -157,7 +157,7 @@ function sendOrderViaWhatsApp() {
     }
     
     // Format WhatsApp message
-    let message = `*NEW FOOD ORDER*%0A%0A`;
+    let message = `*NEW ORDER*%0A%0A`;
     message += `*Customer Name:* ${name}%0A`;
     message += `*Phone:* ${phone}%0A`;
     message += `*Delivery Address:*%0A${address}%0A%0A`;
@@ -182,7 +182,7 @@ function sendOrderViaWhatsApp() {
     message += `Please confirm this order.`;
     
     // Open WhatsApp (replace with your number)
-    const whatsappNumber = '923005159901';
+    const whatsappNumber = '+923416040120';
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
     
     // Reset order
