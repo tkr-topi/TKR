@@ -224,7 +224,7 @@ function sendOrderViaWhatsApp() {
     const address = document.getElementById('customerAddress')?.value;
     
     if (!name || !phone || !address) {
-        alert('Please fill in all required fields');
+        alert('Please fill in all required fields')
         return;
     }
     
@@ -270,3 +270,26 @@ function sendOrderViaWhatsApp() {
     
     alert('Your essentials order has been sent! Please wait for call from our delivery boy.');
 }
+
+  document.addEventListener('DOMContentLoaded', function() {
+            const verifyBtn = document.getElementById('verifyAgeBtn');
+            const ageGate = document.getElementById('ageGateMessage');
+            const essentialsMenu = document.getElementById('essentialsMenu');
+            
+            verifyBtn.addEventListener('click', function() {
+                // For demonstration purposes, we're just showing the categories
+                // In a real implementation, you would verify age properly
+                ageGate.style.display = 'none';
+                essentialsMenu.style.display = 'block';
+            });
+        });
+        
+        function openCategory(category) {
+            // This function would navigate to the separate category page
+            // For this example, we'll just show an alert
+            alert(`Navigating to ${category} page...\nIn the actual implementation, this would open the separate HTML file for this category.`);
+            
+            // In your actual implementation, you would use:
+            // window.location.href = `${category}.html`;
+            // or similar navigation method
+        }
