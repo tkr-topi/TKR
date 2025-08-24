@@ -42,7 +42,7 @@ tabBtns.forEach(btn => {
 
 // WhatsApp Order Function
 function orderOnWhatsApp(item) {
-    const phone = "+919876543210";
+    const phone = "+923416040120";
     const message = `Hi, I'd like to order ${item}. Please confirm availability.`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
